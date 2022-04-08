@@ -3,22 +3,26 @@ package login;
 
 
 import com.codeborne.selenide.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+//import org.testng.Assert;
+//import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.Test;
 
 import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Login_Test {
 
 
-    @BeforeMethod
+    @BeforeEach
     public void setupMethod() throws InterruptedException{
 
         //Configuration.baseUrl="https://";
@@ -47,7 +51,8 @@ public class Login_Test {
         switchTo().parentFrame();
         switchTo().frame(1);
         System.out.println($(By.tagName("body")).getText());
-        Assert.assertTrue(true);
+       // Assert.
+        assertTrue(true);
     }
     @Test
     public void switchToAlert() {
@@ -57,7 +62,8 @@ public class Login_Test {
         String actual= alert.getText();
         alert.accept();
         String expected= "I am a JS Alert";
-        Assert.assertEquals(actual, expected);
+        //Assert.
+        assertEquals(actual, expected);
     }
     @Test
     public void findelements() {
