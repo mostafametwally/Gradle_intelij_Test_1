@@ -3,10 +3,13 @@ package login;
 
 
 import com.codeborne.selenide.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 //import org.testng.annotations.BeforeMethod;
 //import org.testng.annotations.Test;
@@ -21,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Login_Test {
 
-
+WebDriver driver;
     @BeforeEach
     public void setupMethod() throws InterruptedException{
 
@@ -38,12 +41,15 @@ public class Login_Test {
         //open("https://the-internet.herokuapp.com/");
         // taskkill /F /IM chromedriver.exe /T
 
-        System.setProperty("selenide.remote", "http://0.0.0.0:4444/wd/hub");
+        //System.setProperty("selenide.remote", "http://0.0.0.0:4444/wd/hub");
+        WebDriverManager.chromedriver().setup();
+        driver= new ChromeDriver();
 
     }
     @Test
     public void switchToFrame() throws InterruptedException {
-        open("https://the-internet.herokuapp.com/nested_frames");
+        //open("https://the-internet.herokuapp.com/nested_frames");
+        driver.navigate().to("https://the-internet.herokuapp.com/nested_frames");
         System.out.println($$(By.tagName("frame")).size());
         switchTo().frame(0);
         System.out.println($$(By.tagName("frame")).size());
