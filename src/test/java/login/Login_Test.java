@@ -28,9 +28,9 @@ public class Login_Test {
         //Configuration.baseUrl="https://";
         Configuration.browserSize = "1296x687";
         Configuration.holdBrowserOpen= true;
-        Configuration.browser="firefox";
+        Configuration.browser="chrome";
         //com.codeborne.selenide.Configuration.chromeSwitches = "no-sandbox";
-        //Configuration.headless= true;
+        Configuration.headless= true;
 
         Configuration.browserPosition="0x0";
 
