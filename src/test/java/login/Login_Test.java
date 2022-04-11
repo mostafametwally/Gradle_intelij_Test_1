@@ -97,4 +97,8 @@ public class Login_Test {
         actions().dragAndDrop($(By.id("draggablee")), $(By.id("droppable"))).build().perform();
         Thread.sleep(3000);
     }
+    @Test
+    public void helloWorld(){
+        System.out.println("Hello World This is mostafa from the Earth");
+    }
 }
