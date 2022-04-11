@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 //import org.testng.annotations.BeforeMethod;
 //import org.testng.annotations.Test;
 
@@ -24,8 +25,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Login_Test {
 
-WebDriver driver;
-    @BeforeEach
+
+    @BeforeTest
     public void setupMethod() throws InterruptedException{
 
         //Configuration.baseUrl="https://";
@@ -42,13 +43,14 @@ WebDriver driver;
         // taskkill /F /IM chromedriver.exe /T
 
         //System.setProperty("selenide.remote", "http://0.0.0.0:4444/wd/hub");
-        WebDriverManager.chromedriver().setup();
-        driver= new ChromeDriver();
+
 
     }
     @Test
     public void switchToFrame() throws InterruptedException {
         //open("https://the-internet.herokuapp.com/nested_frames");
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver= new ChromeDriver();
         driver.navigate().to("https://the-internet.herokuapp.com/nested_frames");
         System.out.println($$(By.tagName("frame")).size());
         switchTo().frame(0);
