@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-//import org.testng.Assert;
+import org.testng.Assert;
 //import org.testng.annotations.BeforeMethod;
 //import org.testng.annotations.Test;
 
@@ -36,6 +36,9 @@ public class Login_Test {
         //open("www.google.com");
         //open("https://the-internet.herokuapp.com/");
         // taskkill /F /IM chromedriver.exe /T
+
+        System.setProperty("selenide.remote", "http://0.0.0.0:4444/wd/hub");
+
     }
     @Test
     public void switchToFrame() throws InterruptedException {
@@ -51,8 +54,7 @@ public class Login_Test {
         switchTo().parentFrame();
         switchTo().frame(1);
         System.out.println($(By.tagName("body")).getText());
-       // Assert.
-        assertTrue(true);
+       Assert.assertTrue(true);
     }
     @Test
     public void switchToAlert() {

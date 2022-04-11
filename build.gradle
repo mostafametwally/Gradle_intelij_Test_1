@@ -18,7 +18,7 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0'
 
     // https://mvnrepository.com/artifact/org.testng/testng
-    //testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '4.1.2'
@@ -28,6 +28,9 @@ dependencies {
 
 // https://mvnrepository.com/artifact/com.codeborne/selenide
     implementation group: 'com.codeborne', name: 'selenide', version: '6.3.5'
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.0.3'
+
 }
 
 test {
